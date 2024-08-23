@@ -26,12 +26,13 @@ const Product = () => {
     return (
         <div>
             <div className="container">
+                <h2 className='text-center m-5'>Shoping cart Landing page</h2>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col">
                 <div className="card shadow-sm">
                 <img src={hand} alt="" />
                 <div className="card-body">
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p className="card-text">Handball</p>
                     <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
                         <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
@@ -46,7 +47,7 @@ const Product = () => {
                 <div className="card shadow-sm">
                 <img src={volley} alt="" />
                 <div className="card-body">
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p className="card-text">Volleyball</p>
                     <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
                     <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
@@ -61,7 +62,7 @@ const Product = () => {
                 <div className="card shadow-sm">
                 <img src={golf} alt="" />
                 <div className="card-body">
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p className="card-text">Golfball</p>
                     <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
                         <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
@@ -77,7 +78,7 @@ const Product = () => {
                 <div className="card shadow-sm">
                 <img src={cricket} alt="" />
                 <div className="card-body">
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p className="card-text">Cricketball</p>
                     <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
                     <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
@@ -92,7 +93,7 @@ const Product = () => {
                 <div className="card shadow-sm">
                     <img src={basket} alt="" />
                 <div className="card-body">
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p className="card-text">Basketball</p>
                     <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
                     <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
@@ -107,7 +108,7 @@ const Product = () => {
                 <div className="card shadow-sm">
                 <img src={foot} alt="" />
                 <div className="card-body">
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p className="card-text">Football</p>
                     <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
                     <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
@@ -120,14 +121,6 @@ const Product = () => {
             </div>
             </div>
             </div>
-            {/* <p>Count:{state.count}</p>
-            <div></div>
-            <button onClick={()=>dispatch({type:'add'})}>
-                add
-            </button>
-            <button onClick={()=>dispatch({type:'sub'})}>
-                remove
-            </button> */}
         </div>
     )
 }
