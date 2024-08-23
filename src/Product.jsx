@@ -30,13 +30,13 @@ const Product = () => {
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col">
                 <div className="card shadow-sm">
-                <img src={hand} alt="" />
+                <img src={hand} alt=""  className='img-fluid img-responsive' />
                 <div className="card-body">
                     <p className="card-text">Handball</p>
                     <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn-group">
-                        <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
-                        <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn btn-sm btn-outline-secondary">Remove</button>
+                    <div className="btn ">
+                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2 btn-outline-success">Add</button>
+                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
                     </div>
                     <p>Count:{state.count}</p>
                     </div>
@@ -45,13 +45,13 @@ const Product = () => {
             </div>
             <div className="col">
                 <div className="card shadow-sm">
-                <img src={volley} alt="" />
+                <img src={volley} alt=""  className='img-fluid img-responsive'/>
                 <div className="card-body">
                     <p className="card-text">Volleyball</p>
                     <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn-group">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn btn-sm btn-outline-secondary">Remove</button>
+                    <div className="btn ">
+                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2 btn-outline-success">Add</button>
+                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
                     </div>
                     <p>Count:{state.count}</p>
                     </div>
@@ -60,13 +60,13 @@ const Product = () => {
             </div>
             <div className="col">
                 <div className="card shadow-sm">
-                <img src={golf} alt="" />
+                <img src={golf} alt=""  className='img-fluid img-responsive' />
                 <div className="card-body">
                     <p className="card-text">Golfball</p>
                     <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn-group">
-                        <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
-                        <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn btn-sm btn-outline-secondary">Remove</button>
+                    <div className="btn ">
+                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2  btn-outline-success">Add</button>
+                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
                     </div>
                     <p>Count:{state.count}</p>
                     </div>
@@ -76,13 +76,13 @@ const Product = () => {
 
             <div className="col">
                 <div className="card shadow-sm">
-                <img src={cricket} alt="" />
+                <img src={cricket} alt=""  className='img-fluid img-responsive' />
                 <div className="card-body">
                     <p className="card-text">Cricketball</p>
                     <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn-group">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn btn-sm btn-outline-secondary">Remove</button>
+                    <div className="btn ">
+                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2  btn-outline-success">Add</button>
+                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
                     </div>
                     <p>Count:{state.count}</p>
                     </div>
@@ -91,13 +91,13 @@ const Product = () => {
             </div>
             <div className="col">
                 <div className="card shadow-sm">
-                    <img src={basket} alt="" />
+                    <img src={basket} alt=""  className='img-fluid img-responsive' />
                 <div className="card-body">
                     <p className="card-text">Basketball</p>
                     <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn-group">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn btn-sm btn-outline-secondary">Remove</button>
+                    <div className="btn ">
+                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2  btn-outline-success">Add</button>
+                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
                     </div>
                     <p>Count:{state.count}</p>
                     </div>
@@ -106,15 +106,15 @@ const Product = () => {
             </div>
             <div className="col">
                 <div className="card shadow-sm">
-                <img src={foot} alt="" />
+                <img src={foot} alt="Image 1" className='img-fluid img-responsive' />
                 <div className="card-body">
                     <p className="card-text">Football</p>
                     <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn-group">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn btn-sm btn-outline-secondary">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn btn-sm btn-outline-secondary">Remove</button>
+                    <div className="btn ">
+                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2  btn-outline-success">Add</button>
+                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
                     </div>
-                    <small className="text-body-secondary">9 mins</small>
+                    <p>Count:{state.count}</p>
                     </div>
                 </div>
                 </div>
