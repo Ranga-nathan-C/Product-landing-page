@@ -7,118 +7,67 @@ import foot from './assets/soccer-3471402_1280.jpg'
 import hand from './assets/ball-1930198_1280.jpg'
 
 
-const initialState = {count:0};
 
+const initialState = [
+    { id: 1, name: 'Handball', count: 0, image: hand },
+    { id: 2, name: 'Volleyball', count: 0, image: volley },
+    { id: 3, name: 'Golfball', count: 0, image: golf },
+    { id: 4, name: 'Cricketball', count: 0, image: cricket },
+    { id: 5, name: 'Basketball', count: 0, image: basket },
+    { id: 6, name: 'Football', count: 0, image: foot },
+];
 
-const operation =(state,action)=>{
-    switch(action.type){
-        case 'add':
-            return {count:state.count +1};
-        case 'sub':
-            return {count:Math.max(0, state.count - 1) };
-        default:
-            throw new Error();        
+const operation = (state, action) => {
+    switch (action.type) {
+    case 'add':
+        return state.map((product) =>
+        product.id === action.id ? { ...product, count: product.count + 1 } : product
+        );
+    case 'sub':
+        return state.map((product) =>
+        product.id === action.id ? { ...product, count: Math.max(0, product.count - 1) } : product
+        );
+    default:
+        throw new Error();
     }
-}
+};
 
 const Product = () => {
     const [state,dispatch] = useReducer(operation,initialState);
     return (
         <div>
-            <div className="container">
-                <h2 className='text-center m-5'>Shoping cart Landing page</h2>
+        <div className="container">
+            <h2 className="text-center m-5">Shopping Cart Landing Page</h2>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div className="col">
-                <div className="card shadow-sm">
-                <img src={hand} alt=""  className='img-fluid img-responsive' />
-                <div className="card-body">
-                    <p className="card-text">Handball</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn ">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2 btn-outline-success">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
+                {state.map((product) => (
+                <div className="col" key={product.id}>
+                    <div className="card shadow-sm">
+                    <img src={product.image} alt={product.name} className="img-fluid img-responsive" />
+                    <div className="card-body">
+                        <p className="card-text">{product.name}</p>
+                        <div className="d-flex justify-content-between align-items-center">
+                        <div className="btn">
+                            <button
+                            type="button"
+                            onClick={() => dispatch({ type: 'add', id: product.id })}
+                            className="btn m-2 btn-outline-success"
+                            >
+                            Add
+                            </button>
+                            <button
+                            type="button"
+                            onClick={() => dispatch({ type: 'sub', id: product.id })}
+                            className="btn m-2 btn-outline-danger"
+                            >
+                            Remove
+                            </button>
+                        </div>
+                        <p>Count: {product.count}</p>
+                        </div>
                     </div>
-                    <p>Count:{state.count}</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div className="col">
-                <div className="card shadow-sm">
-                <img src={volley} alt=""  className='img-fluid img-responsive'/>
-                <div className="card-body">
-                    <p className="card-text">Volleyball</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn ">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2 btn-outline-success">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
-                    </div>
-                    <p>Count:{state.count}</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div className="col">
-                <div className="card shadow-sm">
-                <img src={golf} alt=""  className='img-fluid img-responsive' />
-                <div className="card-body">
-                    <p className="card-text">Golfball</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn ">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2  btn-outline-success">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
-                    </div>
-                    <p>Count:{state.count}</p>
                     </div>
                 </div>
-                </div>
-            </div>
-
-            <div className="col">
-                <div className="card shadow-sm">
-                <img src={cricket} alt=""  className='img-fluid img-responsive' />
-                <div className="card-body">
-                    <p className="card-text">Cricketball</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn ">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2  btn-outline-success">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
-                    </div>
-                    <p>Count:{state.count}</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div className="col">
-                <div className="card shadow-sm">
-                    <img src={basket} alt=""  className='img-fluid img-responsive' />
-                <div className="card-body">
-                    <p className="card-text">Basketball</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn ">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2  btn-outline-success">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
-                    </div>
-                    <p>Count:{state.count}</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div className="col">
-                <div className="card shadow-sm">
-                <img src={foot} alt="Image 1" className='img-fluid img-responsive' />
-                <div className="card-body">
-                    <p className="card-text">Football</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn ">
-                    <button type="button" onClick={()=>dispatch({type:'add'})} className="btn m-2  btn-outline-success">Add</button>
-                    <button type="button" onClick={()=>dispatch({type:'sub'})} className="btn m-2 btn-outline-danger">Remove</button>
-                    </div>
-                    <p>Count:{state.count}</p>
-                    </div>
-                </div>
-                </div>
-            </div>
+                ))}
             </div>
             </div>
         </div>
